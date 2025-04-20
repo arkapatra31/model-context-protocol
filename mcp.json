@@ -1,0 +1,18 @@
+{
+    "mcpServers": {
+        "Weather": {
+            "command": "path\\to\\.venv\\Scripts\\python.exe",
+            "args": [
+                "path\\to\\weather\\__init__.py"
+            ],
+            "transport": "stdio"
+        },
+        "Internet-Usage": {
+            "command": "path\\to\\.venv\\Scripts\\python.exe",
+            "args": [
+                "path\\to\\internet_usage\\__init__.py"
+            ],
+            "transport": "stdio"
+        }
+    }
+}

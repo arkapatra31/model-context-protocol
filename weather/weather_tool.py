@@ -18,7 +18,6 @@ async def get_weather_for_city(city: str):
     if response:
         return response[0]
 
-
 __all__ = [
     get_weather_for_city
 ]

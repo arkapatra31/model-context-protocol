@@ -15,27 +15,30 @@ def register_resources(mcp: FastMCP):
     """
     Register resources with the FastMCP server.
     """
-    # List available resources
-    @mcp.resource("list://resources")
-    def list_resources():
-        """
-        List all resources.
-        """
-        return {
-            "resources": [
-                {
-                    "uri": "internet-usage://{country}",
-                    "name": "Internet Usage by Country",
-                    "description": "Internet Usage by Country",
-                    "mime_type": "application/json"
-                }
-            ]
-        }
+    # # List available resources
+    # @mcp.resource("list://resources")
+    # def list_resources():
+    #     """
+    #     List all resources.
+    #     """
+    #     return {
+    #         "resources": [
+    #             {
+    #                 "uri": "internet-usage://{country}",
+    #                 "name": "Internet Usage by Country",
+    #                 "description": "Internet Usage by Country",
+    #                 "mime_type": "application/json"
+    #             }
+    #         ]
+    #     }
+    #
 
     @mcp.resource("internet-usage://{country}")
     def get_internet_usage(country: str):
         """
         Get entire internet usage by country.
+        :argument country: str
+        :return: dict
         """
         # Exclude the "_id" field from the response
         return collection.find_one({"Country Name": country}, {"_id": 0})
